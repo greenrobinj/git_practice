@@ -1,25 +1,29 @@
 require 'colorize'
 
 
-def puts_gits(cmd)
-  puts `git #{cmd} -h`
-end
-
-def menu
-  puts 'Main Menu' .colorize(:cyan)
-  puts '1: Inter git command'
-  puts '2: Exit'
+class Main
+  include Gits 
 
 
-case choice
-  when 1
-  puts 'Enter a git comand'
-  puts_gits(gets.strip)
-  menu
-  when 2
-  Exit
-  else
-  puts ' Invalid Choice'
-  menu
+  def self.menu
+    puts 'Main Menu'.colorize(:cyan)
+    puts '1: Inter git command'.colorize(:cyan)
+    puts '2: Exit'.colorize(cyan)
+    choice = gits.to_i
   end
+
+
+  case choice
+    when 1
+    puts 'Enter a git comand'
+    puts_gits(gets.strip)
+    menu
+    when 2
+    Exit
+    else
+    puts ' Invalid Choice'
+    menu
+    end
 end
+
+Main.menu
