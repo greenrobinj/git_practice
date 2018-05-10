@@ -1,8 +1,12 @@
+require 'colorize'
+
+
 def puts_gits(cmd)
   puts `git #{cmd} -h`
 end
 
 def menu
+  puts 'Main Menu' .colorize(:cyan)
   puts '1: Inter git command'
   puts '2: Exit'
 
