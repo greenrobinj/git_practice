@@ -8,7 +8,9 @@ class Main
   def self.menu
     puts 'Main Menu'.colorize(:cyan)
     puts '1: Inter git command'.colorize(:cyan)
-    puts '2: Exit'.colorize(cyan)
+    puts '2:  '
+    puts '3: Exit'.colorize(cyan)
+    puts 
     choice = gits.to_i
   end
 
@@ -19,6 +21,8 @@ class Main
     puts_gits(gets.strip)
     menu
     when 2
+      Git.config
+    when 3
     Exit
     else
     puts ' Invalid Choice'
